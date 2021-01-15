@@ -1,12 +1,19 @@
-import './App.css';
+import React, {useState} from 'react'
 
 function App() {
+  const initialState = [
+    {name: "Brad" },
+    {name: "Brad" },
+    {name: "Brad" },
+    {name: "Brad" },
+  ]
+  const [team, setTeam] = useState(initialState)
   return (
     <div>
       <ul>
-        <li>Brad</li>
-        <li>Shad</li>
-        <li>Berry</li>
+        {team.map( member => {
+          return <li>{member.name}</li>
+        })}
       </ul>
     </div>
   );
